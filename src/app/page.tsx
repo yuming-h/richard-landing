@@ -259,6 +259,12 @@ export default function Home() {
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
+              <Link href="/terms" className="hover:text-white transition-colors">
+                Terms of Use
+              </Link>
+              <Link href="/support" className="hover:text-white transition-colors">
+                Support
+              </Link>
               <span>© 2025 Richard. Your AI-powered study companion.</span>
             </div>
           </div>
