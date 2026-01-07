@@ -66,7 +66,9 @@ export default function Home() {
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
-              href="#"
+              href="https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg"
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -75,7 +77,9 @@ export default function Home() {
               Download for iOS
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.yuming.richard"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-colors shadow-lg"
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -220,7 +224,9 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg"
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -229,7 +235,9 @@ export default function Home() {
               Download for iOS
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.yuming.richard"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-colors shadow-lg"
             >
               <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
