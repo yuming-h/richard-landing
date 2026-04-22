@@ -1,279 +1,327 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const iosUrl = "https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082";
+const androidUrl = "https://play.google.com/store/apps/details?id=com.yuming.richard";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-background text-ink">
       {/* Header */}
-      <header className="container mx-auto px-6 py-8">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Image
-              src="/richard-character/richard-no-background.png"
-              alt="Richard mascot"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="text-2xl font-bold text-gray-800">Richard</span>
-          </div>
-          <div className="flex space-x-4">
-            <a
-              href="#features"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#screenshots"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              Screenshots
-            </a>
-            <Link
-              href="/support"
-              className="text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              Support
+      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10">
+          <nav className="flex h-16 items-center justify-between">
+            <Link href="/" className="flex items-center gap-2.5">
+              <div className="h-10 w-10 rounded-full overflow-hidden bg-[var(--surface)] border border-[var(--hairline)]">
+                <Image
+                  src="/richard-character/richard-no-background.png"
+                  alt="Richard mascot"
+                  width={120}
+                  height={120}
+                  className="h-full w-full object-cover object-top scale-[1.2] origin-top"
+                />
+              </div>
+              <span className="text-[22px] leading-none tracking-tight">
+                Richard
+              </span>
             </Link>
-          </div>
-        </nav>
+            <div className="hidden md:flex items-center gap-10 text-[13px] text-[var(--ink-muted)]">
+              <a href="#features" className="hover:text-ink transition-colors">
+                Features
+              </a>
+              <a href="#glimpses" className="hover:text-ink transition-colors">
+                A closer look
+              </a>
+              <Link href="/support" className="hover:text-ink transition-colors">
+                Support
+              </Link>
+            </div>
+            <a
+              href={iosUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-ink text-[var(--surface)] px-4 py-2 text-[13px] font-medium hover:opacity-90 transition-opacity"
+            >
+              Download
+              <span aria-hidden className="text-[var(--surface)]/70">→</span>
+            </a>
+          </nav>
+        </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-6 py-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/richard-character/richard-hi.png"
-              alt="Richard AI mascot waving"
-              width={200}
-              height={200}
-              className="drop-shadow-lg"
-            />
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-            Meet <span className="text-blue-600">Richard</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl text-gray-600 mb-8 font-light">
-            Your AI-Powered Study Companion
-          </h2>
-          <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Supercharge the way you learn with Richard. Turn lectures, YouTube videos, and PDFs
-            into clear notes, summaries, and study tools—so you can focus on understanding, not just reviewing.
-          </p>
-
-          {/* Download Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a
-              href="https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg"
-            >
-              <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
-              </svg>
-              Download for iOS
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.yuming.richard"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-colors shadow-lg"
-            >
-              <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-              </svg>
-              Get it on Android
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="container mx-auto px-6 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-            Why Richard?
-          </h2>
-          <p className="text-xl text-gray-600 text-center mb-16">
-            Everything you need to study smarter, not harder
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h4a1 1 0 011 1v2M7 4h10l.83 2.12a1 1 0 010 .76l-.83 2.12H7l-.83-2.12a1 1 0 010-.76L7 4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-28">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-2 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
+                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
+                AI study companion
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Upload Lectures & Audio</h3>
-              <p className="text-gray-600">Automatically transcribe, highlight key points, and save time with AI-powered audio processing.</p>
+
+              <h1 className="mt-6 text-[44px] leading-[1.02] sm:text-[60px] md:text-[76px] lg:text-[88px] tracking-[-0.02em] text-ink">
+                Meet <em className="italic text-[var(--accent-soft)]">Richard</em>.
+              </h1>
+
+              <p className="mt-8 max-w-[520px] text-[17px] leading-[1.6] text-[var(--ink-muted)]">
+                Richard is your smartest tutor and study assistant. Get instant notes
+                and interactive study materials to learn from.
+              </p>
+
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                <a
+                  href={iosUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                >
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                  </svg>
+                  Download for iOS
+                </a>
+                <a
+                  href={androidUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[var(--hairline)] bg-transparent text-ink px-6 py-3.5 text-[14px] font-medium hover:bg-[var(--surface)] transition-colors"
+                >
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                  </svg>
+                  Get it on Android
+                </a>
+              </div>
+
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 002.5-2.5V6a2.5 2.5 0 00-2.5-2.5H9V10z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 6v.01M9 6v.01M12 14l3 3-3 3-3-3 3-3z" />
-                </svg>
+            <div className="lg:col-span-5 relative">
+              <div aria-hidden className="absolute inset-0 -z-10">
+                <div className="absolute top-0 right-0 h-[240px] w-[240px] rounded-full bg-[var(--accent-soft)]/15 blur-3xl" />
+                <div className="absolute bottom-0 left-0 h-[180px] w-[180px] rounded-full bg-[var(--hairline)]/70 blur-3xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Learn from YouTube</h3>
-              <p className="text-gray-600">Summarize videos into structured notes you can review anytime, anywhere.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+              <div className="relative flex items-end justify-center lg:justify-end lg:-translate-x-20">
+                <div className="relative z-10 w-[70%] max-w-[440px] -translate-x-8 translate-y-12">
+                  <Image
+                    src="/richard-character/richard-standing.png"
+                    alt="Richard, the study companion mascot"
+                    width={500}
+                    height={680}
+                    className="w-full h-auto drop-shadow-[0_20px_40px_rgba(26,26,23,0.12)]"
+                  />
+                </div>
+                <div className="relative z-0 w-[52%] max-w-[240px] -ml-28 lg:-ml-32">
+                  <Image
+                    src="/screenshots/iphone-notes.png"
+                    alt="Richard app showing a Photosynthesis study note"
+                    width={900}
+                    height={1800}
+                    priority
+                    className="w-full h-auto drop-shadow-[0_24px_50px_rgba(26,26,23,0.15)]"
+                  />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">PDF & Document Support</h3>
-              <p className="text-gray-600">Extract important insights from textbooks and articles with intelligent document processing.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">AI-Powered Summaries</h3>
-              <p className="text-gray-600">Get concise explanations and breakdowns of complex material powered by advanced AI.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Stay Organized</h3>
-              <p className="text-gray-600">Keep all your learning resources and notes in one organized, easily searchable place.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Flashcards & Practice</h3>
-              <p className="text-gray-600">Reinforce concepts with instant flashcards and quizzes generated from your content.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Screenshots Section */}
-      <section id="screenshots" className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-              See Richard in Action
-            </h2>
-            <p className="text-xl text-gray-600 text-center mb-16">
-              Beautiful, intuitive design that makes studying enjoyable
+      {/* Trusted by */}
+      <section className="border-t border-b border-[var(--hairline)] bg-[var(--surface)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-5 lg:py-6">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-subtle)] text-center mb-4">
+            Trusted by students at
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 sm:gap-x-14 lg:gap-x-20 gap-y-3">
+            {SCHOOLS.map((s) => (
+              <Image
+                key={s.src}
+                src={s.src}
+                alt={s.alt}
+                width={160}
+                height={48}
+                className={`${s.size} w-auto object-contain opacity-60 hover:opacity-90 transition-opacity grayscale`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
+                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
+                Capabilities
+              </div>
+              <h2 className="mt-5 text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.015em]">
+                The quiet power of a
+                <br />
+                <em className="italic text-[var(--accent-soft)]">well-kept</em> notebook.
+              </h2>
+              <p className="mt-6 max-w-md text-[16px] leading-[1.65] text-[var(--ink-muted)]">
+                Six tools, one companion. Composed to help you move from
+                listening, to understanding, to remembering.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="grid sm:grid-cols-2 border-t border-[var(--hairline)]">
+                {FEATURES.map((f, i) => (
+                  <div
+                    key={f.title}
+                    className={[
+                      "p-8 lg:p-10 border-b border-[var(--hairline)]",
+                      // right border on left column items (even indexes) on sm+
+                      i % 2 === 0 ? "sm:border-r border-[var(--hairline)]" : "",
+                    ].join(" ")}
+                  >
+                    <span className="text-[13px] italic text-[var(--ink-subtle)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-3 text-[24px] leading-snug tracking-tight">
+                      {f.title}
+                    </h3>
+                    <p className="mt-3 text-[14.5px] leading-[1.6] text-[var(--ink-muted)]">
+                      {f.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Screenshots / A closer look */}
+      <section id="glimpses" className="bg-[var(--surface)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div>
+              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
+                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
+                A closer look
+              </div>
+              <h2 className="mt-5 text-[40px] sm:text-[52px] leading-[1.05] tracking-[-0.015em] max-w-xl">
+                Considered, not cluttered.
+              </h2>
+            </div>
+            <p className="max-w-sm text-[15px] leading-[1.6] text-[var(--ink-muted)]">
+              Every surface has been trimmed to its essentials. Study material
+              belongs at the center — the interface stays out of the way.
             </p>
+          </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-4 rounded-2xl shadow-lg">
-                <Image
-                  src="/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 19.24.36.png"
-                  alt="Richard app interface"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
-              <div className="bg-white p-4 rounded-2xl shadow-lg">
-                <Image
-                  src="/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.00.15.png"
-                  alt="Richard note-taking feature"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
-              <div className="bg-white p-4 rounded-2xl shadow-lg">
-                <Image
-                  src="/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.25.43.png"
-                  alt="Richard study tools"
-                  width={300}
-                  height={600}
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+            {GLIMPSES.map((g, i) => (
+              <figure
+                key={g.src}
+                className={[
+                  "group",
+                  i === 1 ? "md:translate-y-6" : "",
+                ].join(" ")}
+              >
+                <div className="relative overflow-hidden rounded-[28px] bg-background border border-[var(--hairline)]">
+                  <Image
+                    src={g.src}
+                    alt={g.caption}
+                    width={600}
+                    height={1300}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <figcaption className="mt-4 flex items-baseline gap-3">
+                  <span className="italic text-[13px] text-[var(--ink-subtle)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[14px] text-[var(--ink-muted)]">
+                    {g.caption}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="container mx-auto px-6 py-16 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Start Learning the Smart Way
-          </h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Whether you&apos;re preparing for exams, learning a new skill, or exploring a topic you love,
-            Richard makes studying faster, smarter, and more effective.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg"
-            >
-              <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
-              </svg>
-              Download for iOS
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.yuming.richard"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition-colors shadow-lg"
-            >
-              <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-              </svg>
-              Get it on Android
-            </a>
+      {/* CTA */}
+      <section className="border-t border-[var(--hairline)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-24 lg:py-32">
+          <div className="relative rounded-[32px] bg-ink text-[var(--surface)] px-8 sm:px-14 py-16 sm:py-20 overflow-hidden">
+            <div aria-hidden className="absolute inset-0 -z-0">
+              <div className="absolute -top-20 -right-20 h-[380px] w-[380px] rounded-full bg-[var(--accent-soft)]/25 blur-3xl" />
+              <div className="absolute -bottom-24 -left-10 h-[300px] w-[300px] rounded-full bg-[var(--surface)]/10 blur-3xl" />
+            </div>
+            <div className="relative max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--surface)]/60">
+                <span className="h-px w-8 bg-[var(--surface)]/40" />
+                Begin
+              </div>
+              <h2 className="mt-5 text-[40px] sm:text-[56px] leading-[1.05] tracking-[-0.015em]">
+                Study the <em className="italic">smart</em> way.
+              </h2>
+              <p className="mt-5 text-[16px] leading-[1.6] text-[var(--surface)]/75 max-w-lg">
+                Preparing for exams, learning a new skill, or exploring a topic
+                you love — Richard keeps company with the way you think.
+              </p>
+              <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a
+                  href={iosUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--surface)] text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                >
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                  </svg>
+                  Download for iOS
+                </a>
+                <a
+                  href={androidUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[var(--surface)]/25 text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:bg-[var(--surface)]/10 transition-colors"
+                >
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                  </svg>
+                  Get it on Android
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+      <footer className="border-t border-[var(--hairline)]">
+        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="flex items-center gap-2.5">
               <Image
                 src="/richard-character/richard-no-background.png"
                 alt="Richard mascot"
-                width={40}
-                height={40}
+                width={24}
+                height={24}
                 className="rounded-full"
               />
-              <span className="text-2xl font-bold">Richard</span>
+              <span className="text-[18px] leading-none">Richard</span>
+              <span className="text-[12px] text-[var(--ink-subtle)] ml-3">
+                © 2025
+              </span>
             </div>
-            <div className="flex space-x-6 text-gray-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
-                Privacy Policy
+            <div className="flex flex-wrap gap-x-8 gap-y-2 text-[13px] text-[var(--ink-muted)]">
+              <Link href="/privacy" className="hover:text-ink transition-colors">
+                Privacy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
-                Terms of Use
+              <Link href="/terms" className="hover:text-ink transition-colors">
+                Terms
               </Link>
-              <Link href="/support" className="hover:text-white transition-colors">
+              <Link href="/support" className="hover:text-ink transition-colors">
                 Support
               </Link>
-              <span>© 2025 Richard. Your AI-powered study companion.</span>
             </div>
           </div>
         </div>
@@ -281,3 +329,53 @@ export default function Home() {
     </div>
   );
 }
+
+const FEATURES = [
+  {
+    title: "Lectures, listened for you.",
+    body: "Upload audio and Richard transcribes, highlights the turning points, and hands you the essentials.",
+  },
+  {
+    title: "YouTube, distilled.",
+    body: "Paste any link. Get structured notes you can revisit without scrubbing timelines.",
+  },
+  {
+    title: "PDFs, patiently read.",
+    body: "Textbooks and articles surface their ideas — not just their pages.",
+  },
+  {
+    title: "Summaries, written in plain.",
+    body: "Complex material explained in a tone that respects your time.",
+  },
+  {
+    title: "A notebook that keeps itself.",
+    body: "Your materials remain searchable, organized, quietly in order.",
+  },
+  {
+    title: "Flashcards that remember for you.",
+    body: "Quizzes and cards generated straight from your content — ready when you are.",
+  },
+] as const;
+
+const GLIMPSES = [
+  {
+    src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 19.24.36.png",
+    caption: "The library — your materials, composed.",
+  },
+  {
+    src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.00.15.png",
+    caption: "A note, arranged for reading.",
+  },
+  {
+    src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.25.43.png",
+    caption: "Practice that keeps you honest.",
+  },
+] as const;
+
+const SCHOOLS = [
+  { src: "/school-logos/harvard.webp", alt: "Harvard University", size: "h-9 lg:h-11" },
+  { src: "/school-logos/Yale-Logo.webp", alt: "Yale University", size: "h-9 lg:h-11" },
+  { src: "/school-logos/mit.webp", alt: "Massachusetts Institute of Technology", size: "h-6 lg:h-7" },
+  { src: "/school-logos/sanford.webp", alt: "Stanford University", size: "h-12 lg:h-14" },
+  { src: "/school-logos/university-of-chicago.webp", alt: "University of Chicago", size: "h-12 lg:h-14" },
+] as const;
