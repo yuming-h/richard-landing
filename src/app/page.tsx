@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const iosUrl = "https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082";
 const androidUrl = "https://play.google.com/store/apps/details?id=com.yuming.richard";
+const webAppUrl = "https://app.richardapp.xyz";
 
 export default function Home() {
   return (
@@ -30,21 +31,31 @@ export default function Home() {
                 Features
               </a>
               <a href="#glimpses" className="hover:text-ink transition-colors">
-                A closer look
+                Screenshots
               </a>
               <Link href="/support" className="hover:text-ink transition-colors">
                 Support
               </Link>
             </div>
-            <a
-              href={iosUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-ink text-[var(--surface)] px-4 py-2 text-[13px] font-medium hover:opacity-90 transition-opacity"
-            >
-              Download
-              <span aria-hidden className="text-[var(--surface)]/70">→</span>
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={webAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-ink text-ink px-4 py-2 text-[13px] font-medium hover:bg-ink hover:text-[var(--surface)] transition-colors"
+              >
+                Log in
+              </a>
+              <a
+                href={iosUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-ink text-[var(--surface)] px-4 py-2 text-[13px] font-medium hover:opacity-90 transition-opacity"
+              >
+                Download
+                <span aria-hidden className="text-[var(--surface)]/70">→</span>
+              </a>
+            </div>
           </nav>
         </div>
       </header>
@@ -54,42 +65,52 @@ export default function Home() {
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-28">
           <div className="grid lg:grid-cols-12 gap-6 lg:gap-2 items-center">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
-                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
-                AI study companion
-              </div>
-
-              <h1 className="mt-6 text-[44px] leading-[1.02] sm:text-[60px] md:text-[76px] lg:text-[88px] tracking-[-0.02em] text-ink">
-                Meet <em className="italic text-[var(--accent-soft)]">Richard</em>.
+              <h1 className="text-[36px] leading-[1.05] sm:text-[44px] md:text-[54px] lg:text-[64px] tracking-[-0.02em] text-ink">
+                Hey, I&apos;m <span className="text-[var(--accent-soft)]">Richard</span>.
               </h1>
 
               <p className="mt-8 max-w-[520px] text-[17px] leading-[1.6] text-[var(--ink-muted)]">
-                Richard is your smartest tutor and study assistant. Get instant notes
-                and interactive study materials to learn from.
+                Your AI study buddy. Drop in a lecture, YouTube video, or PDF
+                and I&apos;ll spit out notes, flashcards, and quizzes in seconds.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              <div className="mt-10 inline-flex flex-col items-center gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <a
+                    href={iosUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  >
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    Download for iOS
+                  </a>
+                  <a
+                    href={androidUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  >
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    Get it on Android
+                  </a>
+                </div>
                 <a
-                  href={iosUrl}
+                  href={webAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-ink text-ink px-6 py-3.5 text-[14px] font-medium hover:bg-ink hover:text-[var(--surface)] transition-colors"
                 >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
                   </svg>
-                  Download for iOS
-                </a>
-                <a
-                  href={androidUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                  </svg>
-                  Get it on Android
+                  Continue on web
                 </a>
               </div>
 
@@ -130,7 +151,7 @@ export default function Home() {
       <section className="border-t border-b border-[var(--hairline)] bg-[var(--surface)]">
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-5 lg:py-6">
           <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-subtle)] text-center mb-4">
-            Trusted by students at
+            Used by students at
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 sm:gap-x-14 lg:gap-x-20 gap-y-3">
             {SCHOOLS.map((s) => (
@@ -152,18 +173,14 @@ export default function Home() {
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
-                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
-                Capabilities
-              </div>
-              <h2 className="mt-5 text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.015em]">
-                The quiet power of a
+              <h2 className="text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.015em]">
+                Six tools to help
                 <br />
-                <em className="italic text-[var(--accent-soft)]">well-kept</em> notebook.
+                you <span className="text-[var(--accent-soft)]">actually</span> study.
               </h2>
               <p className="mt-6 max-w-md text-[16px] leading-[1.65] text-[var(--ink-muted)]">
-                Six tools, one companion. Composed to help you move from
-                listening, to understanding, to remembering.
+                Everything you need to turn class stuff into things you can
+                study from. No fluff, just the good parts.
               </p>
             </div>
 
@@ -178,7 +195,7 @@ export default function Home() {
                       i % 2 === 0 ? "sm:border-r border-[var(--hairline)]" : "",
                     ].join(" ")}
                   >
-                    <span className="text-[13px] italic text-[var(--ink-subtle)]">
+                    <span className="text-[13px] text-[var(--ink-subtle)]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="mt-3 text-[24px] leading-snug tracking-tight">
@@ -200,17 +217,13 @@ export default function Home() {
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
             <div>
-              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--ink-subtle)]">
-                <span className="h-px w-8 bg-[var(--ink-subtle)]/60" />
-                A closer look
-              </div>
-              <h2 className="mt-5 text-[40px] sm:text-[52px] leading-[1.05] tracking-[-0.015em] max-w-xl">
-                Considered, not cluttered.
+              <h2 className="text-[40px] sm:text-[52px] leading-[1.05] tracking-[-0.015em] max-w-xl">
+                Take a peek inside.
               </h2>
             </div>
             <p className="max-w-sm text-[15px] leading-[1.6] text-[var(--ink-muted)]">
-              Every surface has been trimmed to its essentials. Study material
-              belongs at the center — the interface stays out of the way.
+              Clean, simple, and built for getting stuff done. The app stays
+              out of your way so you can focus on your work.
             </p>
           </div>
 
@@ -233,7 +246,7 @@ export default function Home() {
                   />
                 </div>
                 <figcaption className="mt-4 flex items-baseline gap-3">
-                  <span className="italic text-[13px] text-[var(--ink-subtle)]">
+                  <span className="text-[13px] text-[var(--ink-subtle)]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[14px] text-[var(--ink-muted)]">
@@ -255,39 +268,50 @@ export default function Home() {
               <div className="absolute -bottom-24 -left-10 h-[300px] w-[300px] rounded-full bg-[var(--surface)]/10 blur-3xl" />
             </div>
             <div className="relative max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-[var(--surface)]/60">
-                <span className="h-px w-8 bg-[var(--surface)]/40" />
-                Begin
-              </div>
-              <h2 className="mt-5 text-[40px] sm:text-[56px] leading-[1.05] tracking-[-0.015em]">
-                Study the <em className="italic">smart</em> way.
+              <h2 className="text-[40px] sm:text-[56px] leading-[1.05] tracking-[-0.015em]">
+                Study smarter, not harder.
               </h2>
               <p className="mt-5 text-[16px] leading-[1.6] text-[var(--surface)]/75 max-w-lg">
-                Preparing for exams, learning a new skill, or exploring a topic
-                you love — Richard keeps company with the way you think.
+                Cramming for finals, picking up a new skill, or just nerding
+                out on a topic you love? Richard&apos;s got your back.
               </p>
-              <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="mt-9 inline-flex flex-col items-center gap-3 sm:gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <a
+                    href={iosUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--surface)] text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  >
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                    </svg>
+                    Download for iOS
+                  </a>
+                  <a
+                    href={androidUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  >
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    Get it on Android
+                  </a>
+                </div>
                 <a
-                  href={iosUrl}
+                  href={webAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--surface)] text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[var(--surface)]/60 text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:bg-[var(--surface)] hover:text-ink transition-colors"
                 >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
                   </svg>
-                  Download for iOS
-                </a>
-                <a
-                  href={androidUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                  </svg>
-                  Get it on Android
+                  Continue on web
                 </a>
               </div>
             </div>
@@ -332,43 +356,43 @@ export default function Home() {
 
 const FEATURES = [
   {
-    title: "Lectures, listened for you.",
-    body: "Upload audio and Richard transcribes, highlights the turning points, and hands you the essentials.",
+    title: "Lectures, sorted.",
+    body: "Record or upload audio. Richard transcribes it, pulls the key bits, and hands you clean notes.",
   },
   {
-    title: "YouTube, distilled.",
-    body: "Paste any link. Get structured notes you can revisit without scrubbing timelines.",
+    title: "YouTube notes.",
+    body: "Paste a link, get notes. No more scrubbing back through a 2-hour video to find that one thing.",
   },
   {
-    title: "PDFs, patiently read.",
-    body: "Textbooks and articles surface their ideas — not just their pages.",
+    title: "PDFs, made readable.",
+    body: "Drop in textbooks and articles. Richard breaks them down so you actually get the ideas.",
   },
   {
-    title: "Summaries, written in plain.",
-    body: "Complex material explained in a tone that respects your time.",
+    title: "Plain-English summaries.",
+    body: "Confusing material explained like a friend would explain it. No jargon, no filler.",
   },
   {
-    title: "A notebook that keeps itself.",
-    body: "Your materials remain searchable, organized, quietly in order.",
+    title: "A tidy library.",
+    body: "All your stuff in one place, searchable and sorted without you lifting a finger.",
   },
   {
-    title: "Flashcards that remember for you.",
-    body: "Quizzes and cards generated straight from your content — ready when you are.",
+    title: "Flashcards & quizzes.",
+    body: "Auto-generated from whatever you upload. Ready to drill whenever you are.",
   },
 ] as const;
 
 const GLIMPSES = [
   {
     src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 19.24.36.png",
-    caption: "The library — your materials, composed.",
+    caption: "Your library, all in one place.",
   },
   {
     src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.00.15.png",
-    caption: "A note, arranged for reading.",
+    caption: "Notes that are actually easy to read.",
   },
   {
     src: "/screenshots/Simulator Screenshot - iPhone 16 Pro - 2025-09-24 at 20.25.43.png",
-    caption: "Practice that keeps you honest.",
+    caption: "Quizzes to test if you really know it.",
   },
 ] as const;
 

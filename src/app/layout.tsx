@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Richard — Your AI Study Companion",
+  title: "Richard - Your AI Study Buddy",
   description:
-    "Turn lectures, YouTube videos, and PDFs into clear notes, summaries, and study tools. Focus on understanding, not reviewing.",
+    "Turn lectures, YouTube videos, and PDFs into notes, flashcards, and quizzes in seconds. The easy way to actually study.",
 };
 
 export default function RootLayout({
