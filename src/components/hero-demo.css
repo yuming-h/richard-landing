@@ -1,0 +1,67 @@
+/* Match Turbo's panel size independently of the surrounding hero grid. */
+.hero-demo {
+  width: min(100%, 80vw);
+  max-width: 720px;
+}
+
+@media (min-width: 1024px) {
+  .hero-demo {
+    width: min(100%, calc(40vw - 80px));
+    max-width: 670px;
+  }
+}
+
+.hero-demo-stage {
+  transform-origin: center center;
+}
+
+@keyframes hero-demo-wave {
+  from {
+    transform: scaleY(0.35);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.hero-demo-wave span {
+  animation: hero-demo-wave 800ms ease-in-out infinite alternate;
+  animation-play-state: paused;
+  transform-origin: center;
+}
+
+.hero-demo-wave[data-playing="true"] span {
+  animation-play-state: running;
+}
+
+.hero-demo[data-paused="true"] * {
+  animation-play-state: paused !important;
+}
+
+.hero-demo-flashcard {
+  perspective: 1000px;
+}
+
+.hero-demo-flashcard-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-demo-flashcard-inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+
+.hero-demo-flashcard-face {
+  grid-area: 1 / 1;
+  display: flex;
+  min-height: 174px;
+  flex-direction: column;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-demo-flashcard-back {
+  transform: rotateY(180deg);
+}

@@ -1,211 +1,132 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const iosUrl = "https://apps.apple.com/us/app/richard-ai-notes-and-study/id6752790082";
-const androidUrl = "https://play.google.com/store/apps/details?id=com.yuming.richard";
-const webAppUrl = "https://app.richardapp.xyz";
+import { DownloadButtons } from "@/components/download-buttons";
+import { HeroDemo } from "@/components/hero-demo";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { SiteHeader } from "@/components/site-header";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-ink">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10">
-          <nav className="flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="h-10 w-10 rounded-full overflow-hidden bg-[var(--surface)] border border-[var(--hairline)]">
-                <Image
-                  src="/richard-character/richard-no-background.png"
-                  alt="Richard mascot"
-                  width={120}
-                  height={120}
-                  className="h-full w-full object-cover object-top scale-[1.2] origin-top"
-                />
-              </div>
-              <span className="text-[22px] leading-none tracking-tight">
-                Richard
-              </span>
-            </Link>
-            <div className="hidden md:flex items-center gap-10 text-[13px] text-[var(--ink-muted)]">
-              <a href="#features" className="hover:text-ink transition-colors">
-                Features
-              </a>
-              <a href="#glimpses" className="hover:text-ink transition-colors">
-                Screenshots
-              </a>
-              <Link href="/support" className="hover:text-ink transition-colors">
-                Support
-              </Link>
-            </div>
-            <div className="flex items-center gap-3">
-              <a
-                href={webAppUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-ink text-ink px-4 py-2 text-[13px] font-medium hover:bg-ink hover:text-[var(--surface)] transition-colors"
-              >
-                Log in
-              </a>
-              <a
-                href={iosUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-ink text-[var(--surface)] px-4 py-2 text-[13px] font-medium hover:opacity-90 transition-opacity"
-              >
-                Download
-                <span aria-hidden className="text-[var(--surface)]/70">→</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
+    <div className="landing-canvas min-h-screen text-ink">
+      <SiteHeader />
+      <ScrollReveal />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-28">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-2 items-center">
-            <div className="lg:col-span-7">
-              <h1 className="text-[36px] leading-[1.05] sm:text-[44px] md:text-[54px] lg:text-[64px] tracking-[-0.02em] text-ink">
-                Hey, I&apos;m <span className="text-[var(--accent-soft)]">Richard</span>.
+      <section className="section-enter relative flex min-h-svh flex-col overflow-hidden">
+        <div className="mx-auto flex w-full min-w-0 max-w-[1480px] flex-1 items-center px-6 pt-24 pb-4 lg:px-10 lg:pt-28">
+          <div className="grid w-full min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-10">
+            <div className="mx-auto w-full min-w-0 max-w-[640px] text-center lg:mx-0 lg:max-w-none lg:text-left">
+              <h1 className="text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.02em] text-ink sm:text-[3.35rem] lg:text-[4.35rem]">
+                Richard will tutor you on{" "}
+                <span className="text-[#7848C0]">anything.</span>
               </h1>
 
-              <p className="mt-8 max-w-[520px] text-[17px] leading-[1.6] text-[var(--ink-muted)]">
-                Your AI study buddy. Drop in a lecture, YouTube video, or PDF
-                and I&apos;ll spit out notes, flashcards, and quizzes in seconds.
+              <p className="mx-auto mt-6 max-w-[36rem] text-xl leading-[1.5] text-[var(--ink-muted)] sm:text-[1.45rem] lg:mx-0">
+                Drop in a lecture, YouTube video, or PDF and I&apos;ll spit out
+                notes, flashcards, and quizzes in seconds.
               </p>
 
-              <div className="mt-10 inline-flex flex-col items-center gap-3 sm:gap-4">
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <a
-                    href={iosUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                  >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
-                    </svg>
-                    Download for iOS
-                  </a>
-                  <a
-                    href={androidUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                  >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                    </svg>
-                    Get it on Android
-                  </a>
-                </div>
-                <a
-                  href={webAppUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-ink text-ink px-6 py-3.5 text-[14px] font-medium hover:bg-ink hover:text-[var(--surface)] transition-colors"
-                >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                    <path d="M8 21h8" />
-                    <path d="M12 17v4" />
-                  </svg>
-                  Continue on web
-                </a>
+              <div className="mt-8 lg:mt-6">
+                <DownloadButtons variant="light" />
               </div>
-
             </div>
 
-            <div className="lg:col-span-5 relative">
-              <div aria-hidden className="absolute inset-0 -z-10">
-                <div className="absolute top-0 right-0 h-[240px] w-[240px] rounded-full bg-[var(--accent-soft)]/15 blur-3xl" />
-                <div className="absolute bottom-0 left-0 h-[180px] w-[180px] rounded-full bg-[var(--hairline)]/70 blur-3xl" />
-              </div>
-              <div className="relative flex items-end justify-center lg:justify-end lg:-translate-x-20">
-                <div className="relative z-10 w-[70%] max-w-[440px] -translate-x-8 translate-y-12">
+            <HeroDemo />
+          </div>
+        </div>
+
+        <div className="pb-8">
+          <div className="mx-auto max-w-[1480px] px-6 lg:px-10">
+          <p className="mb-5 text-center text-base font-semibold uppercase tracking-widest text-[var(--ink-muted)] sm:text-lg">
+            Trusted by Learners worldwide.
+          </p>
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div className="logo-marquee flex w-max items-center">
+              {[0, 1].map((copy) => (
+                <ul
+                  key={copy}
+                  className="flex shrink-0 items-center gap-x-12 px-6"
+                  aria-hidden={copy === 1}
+                >
+                  {LOGOS.map((logo) => (
+                    <li key={`${copy}-${logo.src}`} className="flex items-center">
+                      <img
+                        src={logo.src}
+                        alt={copy === 0 ? logo.alt : ""}
+                        style={{ height: logo.height }}
+                        className="w-auto shrink-0 object-contain grayscale brightness-0 opacity-50"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Makes learning easy */}
+      <section
+        id="features"
+        data-reveal
+        className="section-reveal scroll-mt-28"
+      >
+        <div className="mx-auto flex max-w-[920px] flex-col items-center gap-12 px-6 pt-16 pb-4 sm:pt-20 sm:pb-6 lg:gap-14 lg:px-10 lg:pt-28 lg:pb-6">
+          <h2 className="text-center text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
+            Richard makes learning <span className="text-[#7848C0]">easy</span>.
+          </h2>
+
+          <div className="flex w-full flex-col items-center gap-12 lg:w-auto lg:flex-row lg:items-center lg:justify-center lg:gap-4">
+            <div className="flex w-full max-w-md flex-col gap-10 lg:w-[380px] lg:max-w-none lg:shrink-0">
+              {LEARNING_POINTS.map((point) => (
+                <div
+                  key={point.title}
+                  className="border-l-[6px] pl-5"
+                  style={{
+                    borderLeftColor:
+                      "color-mix(in srgb, var(--ink) 80%, transparent)",
+                  }}
+                >
+                  <h3 className="text-2xl font-bold leading-tight text-ink sm:text-3xl">
+                    {point.title}
+                  </h3>
+                  <p className="mt-2 text-base leading-relaxed text-ink sm:text-lg text-balance">
+                    {point.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex w-full justify-center overflow-x-clip lg:w-[360px] lg:shrink-0 lg:-ml-10">
+              <div className="relative flex w-full max-w-[300px] items-end justify-center pb-4 sm:max-w-[360px] sm:pb-12">
+                <div className="relative z-10 w-[62%] max-w-[210px] translate-y-1 sm:w-[70%] sm:max-w-[320px] sm:-translate-x-6 sm:translate-y-9">
                   <Image
                     src="/richard-character/richard-standing.png"
                     alt="Richard, the study companion mascot"
                     width={500}
                     height={680}
-                    className="w-full h-auto drop-shadow-[0_20px_40px_rgba(26,26,23,0.12)]"
+                    className="h-auto w-full drop-shadow-[0_20px_40px_rgba(26,26,23,0.12)]"
                   />
                 </div>
-                <div className="relative z-0 w-[52%] max-w-[240px] -ml-28 lg:-ml-32">
+                <div className="relative z-0 -ml-8 w-[46%] max-w-[132px] sm:-ml-20 sm:w-[52%] sm:max-w-[180px] lg:-ml-24">
                   <Image
                     src="/screenshots/iphone-notes.png"
                     alt="Richard app showing a Photosynthesis study note"
-                    width={900}
-                    height={1800}
-                    priority
-                    className="w-full h-auto drop-shadow-[0_24px_50px_rgba(26,26,23,0.15)]"
+                    width={996}
+                    height={2726}
+                    className="h-auto w-full drop-shadow-[0_24px_50px_rgba(26,26,23,0.15)]"
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted by */}
-      <section className="border-t border-b border-[var(--hairline)] bg-[var(--surface)]">
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-5 lg:py-6">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--ink-subtle)] text-center mb-4">
-            Used by students at
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 sm:gap-x-14 lg:gap-x-20 gap-y-3">
-            {SCHOOLS.map((s) => (
-              <Image
-                key={s.src}
-                src={s.src}
-                alt={s.alt}
-                width={160}
-                height={48}
-                className={`${s.size} w-auto object-contain opacity-60 hover:opacity-90 transition-opacity grayscale`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section id="features" className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-5">
-              <h2 className="text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.05] tracking-[-0.015em]">
-                Six tools to help
-                <br />
-                you <span className="text-[var(--accent-soft)]">actually</span> study.
-              </h2>
-              <p className="mt-6 max-w-md text-[16px] leading-[1.65] text-[var(--ink-muted)]">
-                Everything you need to turn class stuff into things you can
-                study from. No fluff, just the good parts.
-              </p>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid sm:grid-cols-2 border-t border-[var(--hairline)]">
-                {FEATURES.map((f, i) => (
-                  <div
-                    key={f.title}
-                    className={[
-                      "p-8 lg:p-10 border-b border-[var(--hairline)]",
-                      // right border on left column items (even indexes) on sm+
-                      i % 2 === 0 ? "sm:border-r border-[var(--hairline)]" : "",
-                    ].join(" ")}
-                  >
-                    <span className="text-[13px] text-[var(--ink-subtle)]">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-3 text-[24px] leading-snug tracking-tight">
-                      {f.title}
-                    </h3>
-                    <p className="mt-3 text-[14.5px] leading-[1.6] text-[var(--ink-muted)]">
-                      {f.body}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -213,106 +134,60 @@ export default function Home() {
       </section>
 
       {/* Screenshots / A closer look */}
-      <section id="glimpses" className="bg-[var(--surface)]">
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-20 lg:py-28">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-            <div>
-              <h2 className="text-[40px] sm:text-[52px] leading-[1.05] tracking-[-0.015em] max-w-xl">
-                Take a peek inside.
-              </h2>
-            </div>
-            <p className="max-w-sm text-[15px] leading-[1.6] text-[var(--ink-muted)]">
+      <section id="glimpses" data-reveal className="section-reveal">
+        <div className="mx-auto max-w-[1240px] px-6 pt-6 pb-20 lg:px-10 lg:pt-8 lg:pb-28">
+          <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
+            <h2 className="text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
+              Take a peek inside.
+            </h2>
+            <p className="mx-auto mt-5 max-w-sm text-[15px] leading-[1.6] text-[var(--ink-muted)]">
               Clean, simple, and built for getting stuff done. The app stays
               out of your way so you can focus on your work.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
-            {GLIMPSES.map((g, i) => (
-              <figure
-                key={g.src}
-                className={[
-                  "group",
-                  i === 1 ? "md:translate-y-6" : "",
-                ].join(" ")}
-              >
-                <div className="relative overflow-hidden rounded-[28px] bg-background border border-[var(--hairline)]">
+          <div className="glimpses-scroller -mx-6 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-6 pb-2 sm:mx-auto sm:w-full sm:max-w-[640px] sm:justify-center sm:gap-5 sm:overflow-visible sm:px-0">
+            {GLIMPSES.map((g) => (
+              <div key={g.src} className="iphone">
+                <span className="iphone-btn iphone-btn-silent" aria-hidden />
+                <span className="iphone-btn iphone-btn-vol-up" aria-hidden />
+                <span className="iphone-btn iphone-btn-vol-down" aria-hidden />
+                <span className="iphone-btn iphone-btn-power" aria-hidden />
+                <div className="iphone-screen">
                   <Image
                     src={g.src}
                     alt={g.caption}
-                    width={600}
-                    height={1300}
-                    className="w-full h-auto"
+                    width={1206}
+                    height={2622}
+                    className="block h-auto w-full"
                   />
                 </div>
-                <figcaption className="mt-4 flex items-baseline gap-3">
-                  <span className="text-[13px] text-[var(--ink-subtle)]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-[14px] text-[var(--ink-muted)]">
-                    {g.caption}
-                  </span>
-                </figcaption>
-              </figure>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
+      <Testimonials />
+
       {/* CTA */}
-      <section className="border-t border-[var(--hairline)]">
+      <section data-reveal className="section-reveal">
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-24 lg:py-32">
-          <div className="relative rounded-[32px] bg-ink text-[var(--surface)] px-8 sm:px-14 py-16 sm:py-20 overflow-hidden">
+          <div className="relative overflow-hidden rounded-[32px] bg-ink px-5 py-14 text-[var(--surface)] sm:px-14 sm:py-20">
             <div aria-hidden className="absolute inset-0 -z-0">
               <div className="absolute -top-20 -right-20 h-[380px] w-[380px] rounded-full bg-[var(--accent-soft)]/25 blur-3xl" />
               <div className="absolute -bottom-24 -left-10 h-[300px] w-[300px] rounded-full bg-[var(--surface)]/10 blur-3xl" />
             </div>
-            <div className="relative max-w-2xl">
+            <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left">
               <h2 className="text-[40px] sm:text-[56px] leading-[1.05] tracking-[-0.015em]">
                 Study smarter, not harder.
               </h2>
-              <p className="mt-5 text-[16px] leading-[1.6] text-[var(--surface)]/75 max-w-lg">
+              <p className="mt-5 max-w-lg text-[16px] leading-[1.6] text-[var(--surface)]/75">
                 Cramming for finals, picking up a new skill, or just nerding
                 out on a topic you love? Richard&apos;s got your back.
               </p>
-              <div className="mt-9 inline-flex flex-col items-center gap-3 sm:gap-4">
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <a
-                    href={iosUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--surface)] text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                  >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
-                    </svg>
-                    Download for iOS
-                  </a>
-                  <a
-                    href={androidUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2.5 rounded-full bg-white text-ink px-6 py-3.5 text-[14px] font-medium hover:opacity-90 transition-opacity"
-                  >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                    </svg>
-                    Get it on Android
-                  </a>
-                </div>
-                <a
-                  href={webAppUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full border border-[var(--surface)]/60 text-[var(--surface)] px-6 py-3.5 text-[14px] font-medium hover:bg-[var(--surface)] hover:text-ink transition-colors"
-                >
-                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                    <path d="M8 21h8" />
-                    <path d="M12 17v4" />
-                  </svg>
-                  Continue on web
-                </a>
+              <div className="mt-9 w-full lg:w-auto">
+                <DownloadButtons variant="dark" />
               </div>
             </div>
           </div>
@@ -320,9 +195,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--hairline)]">
+      <footer
+        data-reveal
+        className="section-reveal border-t border-[var(--hairline)]"
+      >
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
             <div className="flex items-center gap-2.5">
               <Image
                 src="/richard-character/richard-no-background.png"
@@ -336,7 +214,7 @@ export default function Home() {
                 © 2025
               </span>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2 text-[13px] text-[var(--ink-muted)]">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[13px] text-[var(--ink-muted)] md:justify-end">
               <Link href="/privacy" className="hover:text-ink transition-colors">
                 Privacy
               </Link>
@@ -354,30 +232,14 @@ export default function Home() {
   );
 }
 
-const FEATURES = [
+const LEARNING_POINTS = [
   {
-    title: "Lectures, sorted.",
-    body: "Record or upload audio. Richard transcribes it, pulls the key bits, and hands you clean notes.",
+    title: "Upload anything",
+    body: "Lectures, PDFs, YouTube videos, or your own notes — Richard understands it all.",
   },
   {
-    title: "YouTube notes.",
-    body: "Paste a link, get notes. No more scrubbing back through a 2-hour video to find that one thing.",
-  },
-  {
-    title: "PDFs, made readable.",
-    body: "Drop in textbooks and articles. Richard breaks them down so you actually get the ideas.",
-  },
-  {
-    title: "Plain-English summaries.",
-    body: "Confusing material explained like a friend would explain it. No jargon, no filler.",
-  },
-  {
-    title: "A tidy library.",
-    body: "All your stuff in one place, searchable and sorted without you lifting a finger.",
-  },
-  {
-    title: "Flashcards & quizzes.",
-    body: "Auto-generated from whatever you upload. Ready to drill whenever you are.",
+    title: "Learn it the easy way",
+    body: "Notes, quizzes, flashcards, and podcasts that make studying feel effortless.",
   },
 ] as const;
 
@@ -396,10 +258,15 @@ const GLIMPSES = [
   },
 ] as const;
 
-const SCHOOLS = [
-  { src: "/school-logos/harvard.webp", alt: "Harvard University", size: "h-9 lg:h-11" },
-  { src: "/school-logos/Yale-Logo.webp", alt: "Yale University", size: "h-9 lg:h-11" },
-  { src: "/school-logos/mit.webp", alt: "Massachusetts Institute of Technology", size: "h-6 lg:h-7" },
-  { src: "/school-logos/sanford.webp", alt: "Stanford University", size: "h-12 lg:h-14" },
-  { src: "/school-logos/university-of-chicago.webp", alt: "University of Chicago", size: "h-12 lg:h-14" },
+const LOGOS = [
+  { src: "/logos/google.svg", alt: "Google", height: 32 },
+  { src: "/logos/harvard.svg", alt: "Princeton University", height: 32 },
+  { src: "/logos/goldmansachs.svg", alt: "Goldman Sachs", height: 32 },
+  { src: "/logos/mit.svg", alt: "MIT", height: 28 },
+  { src: "/logos/mckinsey.svg", alt: "McKinsey", height: 32 },
+  { src: "/logos/yale.svg", alt: "Stanford University", height: 52 },
+  { src: "/logos/deloitte.svg", alt: "Deloitte", height: 28 },
+  { src: "/logos/duke.svg", alt: "Duke University", height: 36 },
+  { src: "/logos/northwestern.svg", alt: "University of Oxford", height: 40 },
+  { src: "/logos/utaustin.svg", alt: "The University of Texas at Austin", height: 36 },
 ] as const;
