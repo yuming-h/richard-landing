@@ -13,30 +13,35 @@ export default function Home() {
       <ScrollReveal />
 
       {/* Hero */}
-      <section className="section-enter relative flex min-h-svh flex-col overflow-hidden">
+      <section className="relative flex min-h-svh flex-col overflow-hidden">
         <div className="mx-auto flex w-full min-w-0 max-w-[1480px] flex-1 items-center px-6 pt-24 pb-4 lg:px-10 lg:pt-28">
           <div className="grid w-full min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-10">
             <div className="mx-auto w-full min-w-0 max-w-[640px] text-center lg:mx-0 lg:max-w-none lg:text-left">
-              <h1 className="text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.02em] text-ink sm:text-[3.35rem] lg:text-[4.35rem]">
+              <h1 className="hero-pop text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.02em] text-ink sm:text-[3.35rem] lg:text-[4.35rem]">
                 Richard will tutor you on{" "}
                 <span className="text-[#7848C0]">anything.</span>
               </h1>
 
-              <p className="mx-auto mt-6 max-w-[36rem] text-xl leading-[1.5] text-[var(--ink-muted)] sm:text-[1.45rem] lg:mx-0">
+              <p
+                className="hero-pop mx-auto mt-6 max-w-[36rem] text-xl leading-[1.5] text-[var(--ink-muted)] sm:text-[1.45rem] lg:mx-0"
+                style={{ animationDelay: "90ms" }}
+              >
                 Drop in a lecture, YouTube video, or PDF and I&apos;ll spit out
                 notes, flashcards, and quizzes in seconds.
               </p>
 
-              <div className="mt-8 lg:mt-6">
+              <div className="hero-pop mt-8 lg:mt-6" style={{ animationDelay: "170ms" }}>
                 <DownloadButtons variant="light" />
               </div>
             </div>
 
-            <HeroDemo />
+            <div className="hero-pop min-w-0" style={{ animationDelay: "70ms" }}>
+              <HeroDemo />
+            </div>
           </div>
         </div>
 
-        <div className="pb-8">
+        <div className="hero-pop pb-8" style={{ animationDelay: "260ms" }}>
           <div className="mx-auto max-w-[1480px] px-6 lg:px-10">
           <p className="mb-5 text-center text-base font-semibold uppercase tracking-widest text-[var(--ink-muted)] sm:text-lg">
             Trusted by Learners worldwide.
@@ -76,13 +81,12 @@ export default function Home() {
       </section>
 
       {/* Makes learning easy */}
-      <section
-        id="features"
-        data-reveal
-        className="section-reveal scroll-mt-28"
-      >
+      <section id="features" data-reveal className="scroll-mt-28">
         <div className="mx-auto flex max-w-[920px] flex-col items-center gap-12 px-6 pt-16 pb-4 sm:pt-20 sm:pb-6 lg:gap-14 lg:px-10 lg:pt-28 lg:pb-6">
-          <h2 className="text-center text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
+          <h2
+            data-pop
+            className="text-center text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl"
+          >
             Richard makes learning <span className="text-[#7848C0]">easy</span>.
           </h2>
 
@@ -91,6 +95,7 @@ export default function Home() {
               {LEARNING_POINTS.map((point) => (
                 <div
                   key={point.title}
+                  data-pop
                   className="border-l-[6px] pl-5"
                   style={{
                     borderLeftColor:
@@ -107,7 +112,10 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex w-full justify-center overflow-x-clip lg:w-[360px] lg:shrink-0 lg:-ml-10">
+            <div
+              data-pop
+              className="flex w-full justify-center overflow-x-clip lg:w-[360px] lg:shrink-0 lg:-ml-10"
+            >
               <div className="relative flex w-full max-w-[300px] items-end justify-center pb-4 sm:max-w-[360px] sm:pb-12">
                 <div className="relative z-10 w-[62%] max-w-[210px] translate-y-1 sm:w-[70%] sm:max-w-[320px] sm:-translate-x-6 sm:translate-y-9">
                   <Image
@@ -134,9 +142,9 @@ export default function Home() {
       </section>
 
       {/* Screenshots / A closer look */}
-      <section id="glimpses" data-reveal className="section-reveal">
+      <section id="glimpses" data-reveal>
         <div className="mx-auto max-w-[1240px] px-6 pt-6 pb-20 lg:px-10 lg:pt-8 lg:pb-28">
-          <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
+          <div data-pop className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
             <h2 className="text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
               Take a peek inside.
             </h2>
@@ -146,9 +154,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="glimpses-scroller -mx-6 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-6 pb-2 sm:mx-auto sm:w-full sm:max-w-[640px] sm:justify-center sm:gap-5 sm:overflow-visible sm:px-0">
+          <div className="glimpses-scroller -mx-6 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto px-6 py-4 sm:mx-auto sm:w-full sm:max-w-[640px] sm:justify-center sm:gap-5 sm:overflow-visible sm:px-0">
             {GLIMPSES.map((g) => (
-              <div key={g.src} className="iphone">
+              <div key={g.src} data-pop="scale" className="iphone">
                 <span className="iphone-btn iphone-btn-silent" aria-hidden />
                 <span className="iphone-btn iphone-btn-vol-up" aria-hidden />
                 <span className="iphone-btn iphone-btn-vol-down" aria-hidden />
@@ -171,9 +179,12 @@ export default function Home() {
       <Testimonials />
 
       {/* CTA */}
-      <section data-reveal className="section-reveal">
+      <section data-reveal>
         <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-24 lg:py-32">
-          <div className="relative overflow-hidden rounded-[32px] bg-ink px-5 py-14 text-[var(--surface)] sm:px-14 sm:py-20">
+          <div
+            data-pop
+            className="relative overflow-hidden rounded-[32px] bg-ink px-5 py-14 text-[var(--surface)] sm:px-14 sm:py-20"
+          >
             <div aria-hidden className="absolute inset-0 -z-0">
               <div className="absolute -top-20 -right-20 h-[380px] w-[380px] rounded-full bg-[var(--accent-soft)]/25 blur-3xl" />
               <div className="absolute -bottom-24 -left-10 h-[300px] w-[300px] rounded-full bg-[var(--surface)]/10 blur-3xl" />
@@ -195,11 +206,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer
-        data-reveal
-        className="section-reveal border-t border-[var(--hairline)]"
-      >
-        <div className="mx-auto max-w-[1240px] px-6 lg:px-10 py-10">
+      <footer data-reveal className="border-t border-[var(--hairline)]">
+        <div data-pop className="mx-auto max-w-[1240px] px-6 lg:px-10 py-10">
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left">
             <div className="flex items-center gap-2.5">
               <Image

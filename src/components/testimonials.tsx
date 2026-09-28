@@ -168,12 +168,8 @@ export function Testimonials() {
   };
 
   return (
-    <section
-      id="testimonials"
-      data-reveal
-      className="section-reveal scroll-mt-28 pb-8 lg:pb-10"
-    >
-      <div className="mx-auto max-w-[1240px] px-6 lg:px-10">
+    <section id="testimonials" data-reveal className="scroll-mt-28 pb-8 lg:pb-10">
+      <div data-pop className="mx-auto max-w-[1240px] px-6 lg:px-10">
         <h2 className="text-center text-4xl font-bold leading-tight tracking-[-0.02em] text-ink sm:text-5xl">
           What our users are saying.
         </h2>
@@ -185,6 +181,7 @@ export function Testimonials() {
       <ul
           ref={scrollerRef}
           aria-label="User testimonials"
+          data-pop
           className="testimonials-scroller mt-12 flex cursor-grab gap-5 overflow-x-auto px-6 py-2 active:cursor-grabbing lg:mt-14 lg:px-10"
           onPointerDown={(event) => {
             targetRef.current = null;
@@ -241,7 +238,10 @@ export function Testimonials() {
           ))}
       </ul>
 
-      <div className="mx-auto mt-6 flex max-w-[1240px] items-center justify-between gap-4 px-6 lg:px-10">
+      <div
+        data-pop
+        className="mx-auto mt-6 flex max-w-[1240px] items-center justify-between gap-4 px-6 lg:px-10"
+      >
         <div
           className="flex items-center gap-1.5"
           role="progressbar"
