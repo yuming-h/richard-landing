@@ -242,11 +242,11 @@ export default function Home() {
 
 const LEARNING_POINTS = [
   {
-    title: "Upload anything",
+    title: "Your AI notetaker",
     body: "Lectures, PDFs, YouTube videos, or your own notes — Richard understands it all.",
   },
   {
-    title: "Learn it the easy way",
+    title: "An AI study app",
     body: "Notes, quizzes, flashcards, and podcasts that make studying feel effortless.",
   },
 ] as const;

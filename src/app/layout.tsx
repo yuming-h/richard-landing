@@ -13,10 +13,42 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Richard: AI Notes and Study";
+const description =
+  "An AI note taker and AI study app. Turn lectures, YouTube videos, and PDFs into notes, flashcards, quizzes, and podcasts.";
+
 export const metadata: Metadata = {
-  title: "Richard - Your AI Study Buddy",
-  description:
-    "Turn lectures, YouTube videos, and PDFs into notes, flashcards, and quizzes in seconds. The easy way to actually study.",
+  metadataBase: new URL("https://www.richardapp.xyz"),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title,
+    description,
+    siteName: "Richard",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Richard app icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description,
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
